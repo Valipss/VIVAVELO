@@ -1,0 +1,88 @@
+:root {
+    --popup-green-color:hsla(115, 82%, 36%, 1);
+    --popup-green-color-faded:hsla(115, 82%, 36%, .3);
+    --popup-red-color:hsla(0, 70%, 49%, 1);
+    --popup-red-color-faded:hsla(0, 70%, 49%, .3);
+}
+
+.popup {
+    max-width: 250px;
+}
+
+.popup-name {
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.popup-address {
+    font-size: 1em;
+}
+
+.popup-list {
+    list-style: none;
+    padding: 0;
+}
+
+/* list item */
+.popup-list li {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1em 0;
+}
+.popup-list li div {
+    display: flex;
+}
+.popup-list li div span {
+    font-weight: 500;
+    font-size: 1.5em;
+    padding: 0 .5em;
+}
+/* end list item */
+
+.popup-status {
+    display: block;
+    text-align: center;
+    font-size: 1.3em;
+    font-weight: 500;
+}
+.popup-status::before {
+    display: inline-block;
+    content: '';
+    position: relative;
+    width: .5em;
+    height: .5em;
+    right: .5em;
+    background-color: var(--status-color);
+    border-radius: 100%;
+    border: 1px solid hsl(0, 0%, 0%, .2);
+    animation: breathing 2s infinite normal;
+}
+
+.popup-status.online {
+    --status-color: var(--popup-green-color);
+    --breathing-color: var(--popup-green-color-faded);
+    color: var(--status-color);
+}
+
+.popup-status.offline {
+    --status-color: var(--popup-red-color);
+    --breathing-color: var(--popup-red-color-faded);
+    color: var(--status-color);
+}
+
+@keyframes breathing {
+    0% {
+        box-shadow:
+            0 0 0 0px var(--breathing-color),
+            0 0 0 2px var(--breathing-color),
+            0 0 0 4px var(--breathing-color);
+    }
+    100% {
+        box-shadow:
+            0 0 0 4px var(--breathing-color),
+            0 0 0 2px var(--breathing-color),
+            0 0 0 0px var(--breathing-color);
+    }
+}

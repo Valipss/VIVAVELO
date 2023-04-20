@@ -1,0 +1,95 @@
+.leaflet-geosearch-bar {
+    position: absolute;
+    left: 50%;
+    width: 80vw;
+    border: none;
+    max-height: min-content !important;
+    box-shadow: none;
+    transform: translate(-50%, 80vh);
+    transition: transform 0.5s ease-in-out;
+}
+.leaflet-geosearch-bar:has(> form.open > div.results) {
+    transform: translate(-50%, 50vh);
+}
+
+.leaflet-geosearch-bar form {
+    background-color: transparent !important;
+    border: none !important;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0;
+}
+
+.leaflet-geosearch-bar form input {
+    background-color: white !important;
+    width: 85%;
+    min-width: 85%;
+    padding: 1.5em;
+    font-size: 1.5em;
+    box-shadow: 0 3px 14px rgba(0,0,0,0.4);
+    border-radius: 2em;
+    z-index: 2;
+}
+
+.leaflet-geosearch-bar form button {
+    position: relative !important;
+    padding: 0 !important;
+    line-height: 100% !important;
+    background-color: white !important;
+    font-weight: 400 !important;
+    border-radius: 2em !important;
+    box-shadow: 0 3px 14px rgba(0,0,0,0.4);
+    text-align: center;
+    width: 10%;
+    min-width: 10%;
+    font-size: 3em;
+}
+.leaflet-geosearch-bar form button::target-text {
+    vertical-align: middle;
+}
+
+
+.leaflet-geosearch-bar form > div.results {
+    padding: 0 !important;
+    border: none !important;
+    width: 100%;
+    height: min-content;
+    max-height: 60vh;
+    font-size: 1.5em;
+    margin-top: 1em;
+    border-radius: 2em;
+    box-shadow: 0 3px 14px rgba(0,0,0,0.4);
+    overflow-y: auto;
+}
+.leaflet-geosearch-bar form > div.results::after {
+    border: none !important;
+}
+
+.leaflet-geosearch-bar form > div.results > div {
+    display: flex;
+    gap: 1em;
+    padding: 1em;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 15px 15px -20px;
+    text-align: start;
+    border: none;
+}
+
+.leaflet-geosearch-bar form > div.results > div:hover,
+.leaflet-geosearch-bar form > div.results > div.active {
+    border: none;
+}
+.leaflet-geosearch-bar form > div.results > div:last-of-type {
+    box-shadow: none;   
+}
+
+@media screen and (max-width: 768px) {
+    .leaflet-geosearch-bar {
+        min-width: 100vw;
+        
+    }
+
+    .leaflet-geosearch-bar form {
+        justify-content: space-evenly;
+    }
+}
