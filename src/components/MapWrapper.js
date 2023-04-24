@@ -49,7 +49,7 @@ const MapWrapper = () => {
             whenCreated={setMap}
             center={center}
             zoom={13.5}
-            scrollWheelZoom={false}
+            scrollWheelZoom={true}
             style={{ height: '100vh', width: '100wh' }}
         >
             <TileLayer {...tileLayer} />
